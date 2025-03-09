@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Newal!</title>
+    <style>
+        /* General Styling */
+        body {
+            background-color: #1a1a1a; /* Dark background */
+            color: #ffd700; /* Golden text */
+            font-family: 'Georgia', serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        /* Container for Content */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Heading */
+        h1 {
+            font-size: 4em;
+            margin: 0;
+            animation: glow 2s infinite alternate;
+        }
+
+        /* Message */
+        .message {
+            font-size: 1.5em;
+            line-height: 1.8;
+            margin: 20px auto;
+            max-width: 600px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        /* Cake Animation */
+        .cake {
+            width: 200px;
+            height: 200px;
+            background-image: url('https://i.imgur.com/3ZQZQ9M.png'); /* Replace with your cake image URL */
+            background-size: cover;
+            margin: 20px auto;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Fireworks Animation */
+        .firework {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #ffd700; /* Golden fireworks */
+            border-radius: 50%;
+            animation: explode 1s ease-out infinite;
+        }
+
+        @keyframes explode {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(3);
+                opacity: 0;
+            }
+        }
+
+        /* Glow Effect for Text */
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700;
+            }
+            100% {
+                text-shadow: 0 0 20px #ffd700, 0 0 30px #ffd700, 0 0 40px #ffd700;
+            }
+        }
+
+        /* Romantic Background Animation */
+        .romantic-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #1a1a1a, #000000);
+            z-index: -1;
+            animation: bg-pulse 10s infinite alternate;
+        }
+
+        @keyframes bg-pulse {
+            0% {
+                opacity: 0.8;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Heart Animation */
+        .heart {
+            position: absolute;
+            color: #ff1493; /* Pink hearts */
+            font-size: 20px;
+            animation: heart-float 5s infinite;
+        }
+
+        @keyframes heart-float {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) scale(0.5);
+                opacity: 0;
+            }
+        }
+
+        /* Countdown Timer */
+        .countdown {
+            font-size: 2em;
+            margin: 20px 0;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        } .countdown span {
+            display: inline-block;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Romantic Background -->
+    <div class="romantic-bg"></div>
+
+    <!-- Content Container -->
+    <div class="container">
+        <h1>Happy Birthday Newal!</h1>
+        <div class="message">
+            My dearest Newal,<br>
+            On your special day, I want to remind you how much you mean to me.<br>
+            These 2 years with you have been the most beautiful journey of my life.<br>
+            You are my love, my strength, and my everything.<br>
+            May this year bring you all the happiness and success you deserve. I love you endlessly! ❤️
+        </div>
+        <div class="countdown">
+            <span id="days">00</span> Days
+            <span id="hours">00</span> Hours
+            <span id="minutes">00</span> Minutes
+            <span id="seconds">00</span> Seconds
+        </div>
+        <div class="cake"></div>
+    </div>
+
+    <!-- Fireworks -->
+    <script>
+        function createFirework() {
+            const firework = document.createElement('div');
+            firework.classList.add('firework');
+            firework.style.left = Math.random() * window.innerWidth + 'px';
+            firework.style.top = Math.random() * window.innerHeight + 'px';
+            document.body.appendChild(firework);
+            setTimeout(() => {
+                firework.remove();
+            }, 1000);
+        }
+
+        // Create fireworks every 300ms
+        setInterval(createFirework, 300);
+    </script>
+
+    <!-- Hearts Animation -->
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * window.innerWidth + 'px';
+            heart.style.fontSize = Math.random() * 30 + 20 + 'px';
+            document.body.appendChild(heart);
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        // Create hearts every 500ms
+        setInterval(createHeart, 500);
+    </script>
+
+    <!-- Countdown Timer -->
+    <script>
+        // Set the target date (March 10, 2025)
+        const targetDate = new Date('March 10, 2025 00:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const timeLeft = targetDate - now;
+
+            // Calculate days, hours, minutes, and seconds
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            // Update the countdown display
+            document.getElementById('days').innerText = String(days).padStart(2, '0');
+            document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+            document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+
+            // If the countdown is over, display a message
+            if (timeLeft < 0) {
+                clearInterval(countdownInterval);
+                document.querySelector('.countdown').innerHTML = "🎉 Happy Birthday, Newal! 🎉";
+            }
+        }
+
+        // Update the countdown every second
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+    </script>
+</body>
+</html>
